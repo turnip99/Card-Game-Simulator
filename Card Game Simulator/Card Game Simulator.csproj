@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64589ADB-7D1C-477F-AC87-87C1B85AA3F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Card_Game_Simulator</RootNamespace>
+    <AssemblyName>Card Game Simulator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PlayingCardIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUsers.Designer.cs">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="CardGameDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardGameDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="DisplayUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayUsers.Designer.cs">
+      <DependentUpon>DisplayUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameEngine.cs" />
+    <Compile Include="GameEngineCheat.cs" />
+    <Compile Include="GameEngineFiveLeaves.cs" />
+    <Compile Include="GameSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameSettings.Designer.cs">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetSpeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetSpeed.Designer.cs">
+      <DependentUpon>GetSpeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hand.cs" />
+    <Compile Include="Highscores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Highscores.Designer.cs">
+      <DependentUpon>Highscores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructions.Designer.cs">
+      <DependentUpon>Instructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NPCAI.cs" />
+    <Compile Include="NPCAICheat.cs" />
+    <Compile Include="NPCAIFiveLeaves.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Queue.cs" />
+    <Compile Include="Stack.cs" />
+    <EmbeddedResource Include="AddUsers.resx">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayUsers.resx">
+      <DependentUpon>DisplayUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameSettings.resx">
+      <DependentUpon>GameSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetSpeed.resx">
+      <DependentUpon>GetSpeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Highscores.resx">
+      <DependentUpon>Highscores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instructions.resx">
+      <DependentUpon>Instructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CardGameDatabaseDataSet.xsc">
+      <DependentUpon>CardGameDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CardGameDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CardGameDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CardGameDatabaseDataSet.xss">
+      <DependentUpon>CardGameDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10OfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10OfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10OfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10OfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AceOfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AceOfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AceOfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AceOfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackOfCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackJoker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JackOfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JackOfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JackOfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JackOfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KingOfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KingOfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KingOfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KingOfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QueenOfClubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QueenOfDiamonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QueenOfHearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QueenOfSpades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedJoker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSelect.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheatCallOut.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayCard.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shuffle.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShuffleGif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PlayingCardIcon.ico" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\FRight.gif" />
+    <None Include="Resources\FLeft.gif" />
+    <None Include="Resources\FDown.gif" />
+    <None Include="Resources\MRight.gif" />
+    <None Include="Resources\MLeft.gif" />
+    <None Include="Resources\MDown.gif" />
+    <Content Include="CardGameDatabase.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Five Leaves Rules.png" />
+    <None Include="Resources\Cheat Rules.png" />
+    <None Include="Resources\PickUp.wav" />
+    <None Include="Resources\TrumpSpades.png" />
+    <None Include="Resources\TrumpHearts.png" />
+    <None Include="Resources\TrumpDiamonds.png" />
+    <None Include="Resources\TrumpClubs.png" />
+    <None Include="Resources\General Game Guide.png" />
+    <None Include="Resources\UKFlag.png" />
+    <None Include="Resources\EstonianFlag.png" />
+    <None Include="Resources\BadCallReveal.wav" />
+    <None Include="Resources\CheatReveal.wav" />
+    <None Include="Resources\ButtonRight.png" />
+    <None Include="Resources\ButtonLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
